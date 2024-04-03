@@ -6,11 +6,11 @@ export const metadata = {
     description: 'A Nonstop Photo Gallery App',
 };
 
-export default function RootLayout({ children, modal }) {
+export default function RootLayout({ children, modal, params }) {
     return (
         <html lang="en">
             <body>
-                <Header />
+                <Header lang={params.lang} />
                 <div className="container my-4 lg:my-8">{children}</div>
                 <div id="modal-content">{modal}</div>
             </body>

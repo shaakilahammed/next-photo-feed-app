@@ -1,7 +1,7 @@
 import Language from './Language';
 import Logo from './Logo';
 
-const Header = () => {
+const Header = ({ lang }) => {
     return (
         <nav className="py-4 md:py-6 border-b">
             <div className="container mx-auto flex items-center justify-between gap-x-6">
@@ -11,7 +11,7 @@ const Header = () => {
 
                 <div className="flex gap-4 items-center">
                     {/* <!-- Language Dropdown --> */}
-                    <Language />
+                    <Language lang={lang} />
                 </div>
             </div>
         </nav>
