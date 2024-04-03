@@ -1,8 +1,10 @@
-import { getDictionary } from './dictionaries/dictionaries';
+import PhotoGrid from '@/components/PhotoGrid';
 
-const Home = async ({ params: { lang } }) => {
-    const dictionary = await getDictionary(lang);
-    return <div>{dictionary.save}</div>;
+const Home = async () => {
+    const response = await fetch(`${process.env.API_BASE_URL}/photos`);
+    const data = await response.json();
+
+    return <PhotoGrid photos={data.data} />;
 };
 
 export default Home;
